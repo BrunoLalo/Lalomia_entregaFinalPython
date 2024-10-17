@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title_head %}
+Crear Zapatillas
+{% endblock title_head %}
+
+{% block h1_header %}Crear Zapatillas{% endblock h1_header %}
+{% block main %}
+
+<form action={% url "crear-zapa" %} method="POST">
+    {% csrf_token %}
+    
+    {{form}}
+
+    <input type="submit" value="Enviar">
+</form> 
+
+{% endblock main %}

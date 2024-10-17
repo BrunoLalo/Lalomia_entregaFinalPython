@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Filtrar Zapatillas
+{% endblock title_head %}
+
+{% block main %}
+    <form action={% url "buscar-zapa" %}>
+        {{form}}
+        <input type="submit">
+    </form>
+
+    {% if zapas %}
+    <ul>
+        {% for zapa in zapas %}
+        <ul>
+            <li>Marca: {{zapa.marca}}</li>
+            <li>Color: {{zapa.color}}</li>
+            <li>Talle: {{zapa.talle}}</li>
+            <li>Precio: {{zapa.precio}}</li>
+            <li>~~~~~~~~~~~~~~~~~</li>
+        </ul>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay zapatillas registrados.</p>
+    {% endif %}
+
+{% endblock main %} 
