@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Ver Zapatilla
+{% endblock title_head %}
+
+{% block main %}
+<ul>
+    <li>Marca: {{zapa.marca}}</li>
+    <li>Color: {{zapa.color}}</li>
+    <li>Talle: {{zapa.talle}}</li>
+    <li>Precio: {{zapa.precio}}</li>
+    <li>Fecha de creación: {{zapa.fecha}}</li>
+    <img src={{zapa.imagen.url}} alt="" height="300px">
+</ul>
+
+{% endblock main %} 

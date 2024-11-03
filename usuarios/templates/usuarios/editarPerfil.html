@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Editar Perfil
+{% endblock title_head %}
+
+{% block main %}
+<div class="container-fluid">
+    <h1 class="mt-4">Editar Perfil de {{request.user.username}}</h1>
+    <form action={% url "usuarios:editar_perfil" %} method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{form}}
+    
+        <input type="submit" value="editar">
+    </form> 
+
+    <a href={%url "usuarios:cambiar-pass"%}>Cambiar Contraseña</a>
+
+    
+    </div>
+{% endblock main %}

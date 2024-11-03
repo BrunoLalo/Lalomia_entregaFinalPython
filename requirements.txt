@@ -1,4 +1,7 @@
 asgiref==3.8.1
 Django==5.1.2
+pillow==11.0.0
+segundaEntregaPython @ file:///C:/Users/Usuario/OneDrive/Escritorio/Nueva%20carpeta%20%282%29/dist/segundaentregapython-0.0.1.tar.gz#sha256=8fd2134fef85abe3cdb99ba52a2d177901ba1544408166b6c28775d6bb5a8353
+setuptools==75.1.0
 sqlparse==0.5.1
 tzdata==2024.2

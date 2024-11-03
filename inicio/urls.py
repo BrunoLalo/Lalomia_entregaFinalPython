@@ -1,11 +1,16 @@
 from django.urls import path
-from inicio.views import inicio, crear_zapa, buscar_zapa, crear_success, about
+from inicio import views
+
 
 
 urlpatterns = [
-    path ('', inicio, name= 'index'),
-    path('crear-zapa', crear_zapa, name='crear-zapa'),
-    path('success', crear_success, name='crear_success'),
-    path('buscar-zapa', buscar_zapa, name='buscar-zapa'),
-    path('about', about, name='about')
+    path ('', views.inicio, name= 'index'),
+    path('crear-zapa', views.CrearZapa.as_view(), name='crear-zapa'),
+    path('success', views.crear_success, name='crear_success'),
+    path('buscar-zapa', views.buscar_zapa, name='buscar-zapa'),
+    path('about', views.about, name='about'),
+    path('ver-zapa/<int:id>', views.ver_zapa, name='ver-zapa'),
+    path('eliminar-zapa/<int:id>', views.eliminar_zapa, name='eliminar-zapa'),
+    path('<int:pk>/editar-zapa', views.EditarZapa.as_view(), name='editar-zapa')
+
 ]

@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Cambiar Contraseña
+{% endblock title_head %}
+
+{% block main %}
+<div class="container-fluid">
+    <h1 class="mt-4">Cambiar contraseña</h1>
+    <form action={% url "usuarios:cambiar-pass" %} method="POST">
+        {% csrf_token %}
+        
+        {{form}}
+    
+        <input type="submit" value="editar">
+    </form> 
+    </div>
+{% endblock main %}

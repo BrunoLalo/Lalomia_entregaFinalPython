@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Perfil
+{% endblock title_head %}
+
+{% block main %}
+<div class="container-fluid">
+    <h1 class="mt-4">Perfil de {{request.user.username}}</h1>
+    
+    <ul>
+        {%if request.user.extraperfil.avatar%}<img src={{request.user.extraperfil.avatar.url}} alt="" height="150px"> {% endif %}
+        <ul>
+            <li>Nombre de usuario: {{request.user.username}}</li>
+            <li>Email: {{request.user.email}}</li>
+            <li>Nombre: {{request.user.first_name}}</li>
+            <li>Apellido: {{request.user.last_name}}</li>
+            <li>Profesion: {{request.user.extraperfil.profesion}}</li>
+        </ul>
+    </ul>
+    <a href={%url "usuarios:editar_perfil"%}>Editar datos</a>
+
+{% endblock main %} 

@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title_head %}
+Iniciar Sesión
+{% endblock title_head %}
+
+{% block main %}
+<div class="container-fluid">
+    <h1 class="mt-4">Iniciar Sesión</h1>
+    <form action={% url "usuarios:login" %} method="POST">
+        {% csrf_token %}
+        
+        {{form}}
+    
+        <input type="submit" value="Iniciar sesión">
+    </form> 
+    
+    
+    <p>¿No tienes usuario? ¡Registrate!</p>
+    <a class="btn btn-light" href={% url "usuarios:register" %}>Registrarse</a> 
+</div>
+{% endblock main %}

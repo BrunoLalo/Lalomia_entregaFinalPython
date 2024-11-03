@@ -5,6 +5,7 @@ Filtrar Zapatillas
 {% endblock title_head %}
 
 {% block main %}
+
     <form action={% url "buscar-zapa" %}>
         {{form}}
         <input type="submit">
@@ -16,8 +17,9 @@ Filtrar Zapatillas
         <ul>
             <li>Marca: {{zapa.marca}}</li>
             <li>Color: {{zapa.color}}</li>
-            <li>Talle: {{zapa.talle}}</li>
-            <li>Precio: {{zapa.precio}}</li>
+            <a href={% url "ver-zapa" zapa.id%}>Ver más</a> 
+            |<a href={% url "eliminar-zapa" zapa.id%}>Eliminar</a> 
+            |<a href={% url "editar-zapa" zapa.id%}>Editar</a> 
             <li>~~~~~~~~~~~~~~~~~</li>
         </ul>
         {% endfor %}
