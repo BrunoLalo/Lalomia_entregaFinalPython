@@ -1,3 +1,3 @@
-Lalomia ROmagnolo Bruno
+Lalomia Romagnolo Bruno
 
 Tercera pre-entrega de Python
